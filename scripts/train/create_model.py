@@ -1,4 +1,6 @@
 import pytorchvideo.models.resnet as resnet 
+import pytorchvideo.models.slowfast as slowfast 
+
 import torch.nn as nn 
 
 def make_kinetics_resnet(): 
@@ -12,3 +14,7 @@ def make_kinetics_resnet():
 
     return resnet_model 
 
+def make_slowfast(): 
+    slowfast_model = slowfast.create_slowfast() 
+
+    return slowfast_model 

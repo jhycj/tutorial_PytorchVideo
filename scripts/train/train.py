@@ -6,7 +6,7 @@ from pytorchvideo.data import Kinetics
 import os
 import pytorchvideo.data
 import torch.utils.data
-from create_model import make_kinetics_resnet
+from create_model import make_kinetics_resnet, make_slowfast
 from torchvision.transforms import Compose, RandomCrop, RandomHorizontalFlip, Resize, ToTensor
 import torch.optim as optim 
 import torch.nn as nn 
@@ -91,7 +91,8 @@ class VideoClassificationLightningModule(pl.LightningModule):
     def __init__(self):
         super().__init__()
         self.model = make_kinetics_resnet() 
-
+        #self.model = make_slowfast() 
+        
     def forward(self, x): 
         return self.model(x) 
     
